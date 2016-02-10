@@ -1,0 +1,12 @@
+<div class="row">
+	<div class="span16">
+		<ul class="tabs">
+			<li class="${selectedTab=='CONTACTS'?'active':''}"><a href="contacts">Contacts</a></li>
+			<li class="${selectedTab=='INFO'?'active':''}"><a href="info">Information</a></li>
+			<li class="${selectedTab=='MEETINGS'?'active':''}"><a href="mymeetings">Meetings</a></li>
+			<li class="${selectedTab=='PERFORMANCE'?'active':''}"><a href="performance">Performance</a></li>
+			<li class="${selectedTab=='ACTIONS'?'active':''}"><a href="myactions">Actions</a></li>
+			<li class="${selectedTab=='TOPICS'?'active':''}"><a href="topics">Topics</a></li>
+	    </ul>
+	</div>
+</div>

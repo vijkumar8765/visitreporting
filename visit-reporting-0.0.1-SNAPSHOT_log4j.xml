@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="errFile" class="org.apache.log4j.RollingFileAppender"> 
+
+		<layout class="org.apache.log4j.PatternLayout"> 
+			<param name="ConversionPattern" value="%d [%t] %-5p %c{2}:%L [%X{username}] - %m%n"/> 
+		</layout> 
+
+		<!-- Active log file -->
+		<param name="file" value="F:/Vijay/sts/projects/vr-logs/diagnostic.log" />
+		<param name="append" value="true" />
+		<param name="encoding" value="UTF-8" />
+
+		<!-- Archived logs -->
+		<rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+			<param name="FileNamePattern" value="F:/Vijay/sts/projects/vr-logs/diagnostic.%d.log.gz" />
+		</rollingPolicy>
+
+	</appender> 
+
+	<appender name="perfFile" class="org.apache.log4j.RollingFileAppender"> 
+		<layout class="org.apache.log4j.PatternLayout"> 
+			<param name="ConversionPattern" value="%d [%t] %-5p %c{2}:%L [%X{username}] - %m%n"/> 
+		</layout> 
+
+		<!-- Active log file -->
+		<param name="file" value="F:/Vijay/sts/projects/vr-logs/performance.log" />
+		<param name="append" value="true" />
+		<param name="encoding" value="UTF-8" />
+
+		<!-- Archived logs -->
+		<rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+			<param name="FileNamePattern" value="F:/Vijay/sts/projects/vr-logs/performance.%d.log.gz" />
+		</rollingPolicy>
+	</appender> 
+
+	<logger name="org.springframework.beans.factory">
+		<level value="trace"/> 
+	</logger>
+
+	<logger name="com.volkswagen.visitreporting.PERFORMANCE_LOG">
+		<level value="trace"/> 
+		<appender-ref ref="perfFile" /> 
+	</logger>
+
+	<root> 
+		<priority value ="info" /> 
+		<appender-ref ref="errFile" /> 
+	</root>
+  
+</log4j:configuration>

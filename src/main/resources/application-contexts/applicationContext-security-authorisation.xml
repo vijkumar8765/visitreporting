@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:sec="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="
+				http://www.springframework.org/schema/beans 
+				http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+				http://www.springframework.org/schema/context
+				http://www.springframework.org/schema/context/spring-context-3.0.xsd
+				http://www.springframework.org/schema/security
+				http://www.springframework.org/schema/security/spring-security-3.1.xsd"
+				>
+
+
+	<bean id="webExpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler">
+	</bean>
+
+
+  <sec:global-method-security pre-post-annotations="enabled" >
+    <sec:expression-handler ref="expressionHandler"/>
+  </sec:global-method-security>
+
+
+  <bean id="expressionHandler"
+      class="org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler">
+        <property name="permissionEvaluator" ref="accessControlHandler"/>
+  </bean>
+	
+
+	<!-- This bean checks if the logged in user can invoke the attempted function -->
+    <bean id="accessControlHandler" class="com.vw.visitreporting.security.auth.AccessControlHandler">
+    </bean>
+
+	<!-- This bean checks if the logged in user can invoke the attempted function -->
+    <bean id="functionAccessManager" class="com.vw.visitreporting.security.auth.FunctionAccessManager">
+    </bean>
+
+	<!-- This bean checks if the logged in user can invoke the attempted function on the given domain object-->
+    <bean id="domainObjectAccessManager" class="com.vw.visitreporting.security.auth.DomainObjectAccessManager">
+        <property name="commonRuleInvoker" ref="commonRuleInvoker"/>
+       
+        <property name="functionAccessManager" ref="functionAccessManager"/>
+          
+        <property name="accessControlRuleInvokers"> 
+            <set>
+               <!-- following is a set of all the beans which participate in accessControl Rule Invocation -->     
+                <ref bean="brandAccessRuleInvoker" />
+                <ref bean="organisationAccessRuleInvoker" />
+            </set>
+        </property>    
+    </bean>
+    
+    
+    
+    <!-- This bean contains configuration for all those entities which do not have explicit access rule invokers or still want invocation of common rules-->
+    <bean id="commonRuleInvoker" class="com.vw.visitreporting.security.auth.CommonRuleInvocationBean">       
+        <property name="commonRulesToBeApplied"> 
+            <set>
+            	<!-- The following rules will be applied to the above listed entities -->
+                <ref bean="brandAccessRule" />
+                <ref bean="businessAreaAccessRule" />
+                <ref bean="geographicalStructureAccessRule" />
+                <ref bean="levelAccessRule" />
+                <ref bean="franchiseGroupAccessRule" />
+                <ref bean="organisationAccessRule" />
+                <!-- complete list comes here -->
+            </set>
+        </property>
+        	
+    </bean>
+
+
+<!-- This is the section for access rule invoker entries -->
+<!-- This rule is here for demonstration purpose only  -->
+    <bean id="brandAccessRuleInvoker" class="com.vw.visitreporting.security.auth.AccessControlRuleInvocationBean">
+    	<property name="entity" value="Action"/>
+    	<property name="invokeCommonRules" value="false"/>
+    	 <property name="rulesToBeInvoked"> 
+            <set>
+            <!-- the following can be a list of common and specific rules -->
+                <ref bean="brandAccessRule" />
+            </set>
+        </property> 	
+    </bean>
+    
+    <!-- This rule is here for demonstration purpose only  -->
+    <bean id="organisationAccessRuleInvoker" class="com.vw.visitreporting.security.auth.AccessControlRuleInvocationBean">
+    	<property name="entity" value="Organisation"/>
+    	<property name="invokeCommonRules" value="false"/>
+    	 <property name="rulesToBeInvoked"> 
+            <set>
+            <!-- the following can be a list of common and specific rules -->
+                <ref bean="organisationAccessRule" />
+                <ref bean="brandAccessRule" />
+            </set>
+        </property> 	
+    </bean>
+
+
+<!-- All rule declarations come below -->
+
+<bean id="organisationAccessRule" class="com.vw.visitreporting.security.auth.rule.common.OrganisationAccessControlRule">
+</bean>
+<bean id="brandAccessRule" class="com.vw.visitreporting.security.auth.rule.common.BrandAccessControlRule">
+</bean>
+<bean id="levelAccessRule" class="com.vw.visitreporting.security.auth.rule.common.LevelAccessControlRule">
+</bean>
+<bean id="geographicalStructureAccessRule" class="com.vw.visitreporting.security.auth.rule.common.GeographicalStructureAccessControlRule">
+</bean>
+<bean id="franchiseGroupAccessRule" class="com.vw.visitreporting.security.auth.rule.common.FranchiseGroupAccessControlRule">
+</bean>
+<bean id="businessAreaAccessRule" class="com.vw.visitreporting.security.auth.rule.common.BusinessAreaAccessControlRule">
+</bean>
+
+
+    
+    
+    
+    
+
+
+</beans>

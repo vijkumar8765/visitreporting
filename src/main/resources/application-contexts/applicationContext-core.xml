@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+				http://www.springframework.org/schema/beans 
+				http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+				http://www.springframework.org/schema/context
+				http://www.springframework.org/schema/context/spring-context-3.0.xsd
+				http://www.springframework.org/schema/aop
+				http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<context:component-scan base-package="com.vw.visitreporting" />
+
+	<aop:aspectj-autoproxy/>
+
+		<!-- Register generic type conversion service and add custom converters -->
+	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean class="com.vw.visitreporting.common.converter.OrganisationBrandConverter" />
+				<bean class="com.vw.visitreporting.common.converter.EnumEntityConverter" />
+				<bean class="com.vw.visitreporting.common.converter.DateConverter" />
+				<bean class="com.vw.visitreporting.common.converter.FunctionConverter" />
+				<bean class="com.vw.visitreporting.common.converter.BusinessAreaConverter" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- Load project build properties -->
+	<bean id="propertyPlaceholder" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:/config.properties" />
+	</bean>
+
+	
+	<!-- Check for updates to log configuration -->
+	<bean id="logManager" class="com.vw.visitreporting.logging.LogConfigManager">
+		<property name="sharedLogConfigFileLocation" value="${config.log.config.file}" />
+	</bean>
+
+
+	<!-- Log service performance -->
+	<bean id="springMonitoringAspectInterceptor" class="org.springframework.aop.interceptor.PerformanceMonitorInterceptor">
+		<property name="loggerName" value="com.vw.visitreporting.PERFORMANCE_LOG"/>
+		<property name="prefix" value="[SERVICE_TIMING] "/>
+	</bean>
+
+	<aop:config>
+
+		<aop:pointcut id="springMonitoringPointcut" expression="execution(* com.vw.visitreporting.service..*.*(..))"/>
+
+		<aop:advisor pointcut-ref="springMonitoringPointcut" advice-ref="springMonitoringAspectInterceptor"/>
+
+	</aop:config>
+
+</beans>

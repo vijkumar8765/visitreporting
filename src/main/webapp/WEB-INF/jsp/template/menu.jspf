@@ -1,0 +1,38 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><%
+%><ul class="nav">
+	<li class="dropdown ${param.selectedMenu=='home' ? 'active' : ''}">
+		<a href="<c:url value="/" />">Home</a>
+	</li>
+	<li class="dropdown ${param.selectedMenu=='dealer' ? 'active' : ''}">
+		<c:if test="${not empty userDetails and userDetails.user.positions.level.value==5 and userDetails.user.dealership != null}">
+			<a href="<c:url value="/content/dealership/${userDetails.user.dealership.dealerNumber}/view" />">My Dealership</a>
+		</c:if>
+		<c:if test="${empty userDetails or userDetails.user.positions.level.value < 5}">
+			<a href="<c:url value="/content/dealership/search" />">Dealerships</a>
+		</c:if>
+	</li>
+	<li class="dropdown ${param.selectedMenu=='organisation' ? 'active' : ''}">
+		<a class="dropdown-toggle" href="#">Organisations</a>
+		<ul class="dropdown-menu">
+			<li><a href="<c:url value="/content/organisation/search" />" class="${param.selectedMenuItem=='OrganisationSearch' ? 'active' : ''}">Search Organisations</a></li>
+		</ul>
+	</li>
+	<li class="dropdown ${param.selectedMenu=='meeting' ? 'active' : ''}">
+		<a class="dropdown-toggle" href="#">Meetings</a>
+		<ul class="dropdown-menu">
+			<li><a href="#">Arrange Meeting</a></li>
+			<li><a href="#">Create Visit Report</a></li>
+		</ul>
+	</li>
+	<li class="dropdown ${param.selectedMenu=='admin' ? 'active' : ''}">
+		<a class="dropdown-toggle" href="#">Admin</a>
+		<ul class="dropdown-menu">
+			<li><a href="<c:url value="/content/userprofile/permissions/list" />" class="${param.selectedMenuItem=='profilePermissions' ? 'active' : ''}">Edit User Profile Functions</a></li>
+			<li><a href="<c:url value="/content/organisation/permissions/list" />" class="${param.selectedMenuItem=='orgPermissions' ? 'active' : ''}">Edit Organisation Functions</a></li>
+			<li><a href="<c:url value="/content/organisation/levels/list" />" class="${param.selectedMenuItem=='orgLevels' ? 'active' : ''}">View Organisation Levels</a></li>
+			<li><a href="<c:url value="/content/organisation/sharingrules/list" />" class="${param.selectedMenuItem=='sharingRules' ? 'active' : ''}">Edit Information Sharing Rules</a></li>
+			<li><a href="<c:url value="/content/meetingtype/list" />" class="${param.selectedMenuItem=='meetingTypes' ? 'active' : ''}">Edit Meeting Types</a></li>
+			<li><a href="<c:url value="/content/positions/list" />" class="${param.selectedMenuItem=='positions' ? 'active' : ''}">Edit Positions</a></li>
+		</ul>
+	</li>
+</ul>

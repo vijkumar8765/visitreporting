@@ -1,0 +1,12 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+ 
+	<!-- View Resolver for pdf report generation of Organisation Levels -->
+	<bean name="OrganisationLevelsPdfReport" class="com.vw.visitreporting.reports.OrganisationLevelsPdfView" />
+	
+	<!-- View Resolver for Excel report generation of Organisation Levels -->
+	<bean id="OrganisationLevelsExcelReport" class="com.vw.visitreporting.reports.OrganisationLevelsExcelView" />
+ 
+</beans>

@@ -1,0 +1,349 @@
+Organisation	Brands	User Profile	Level	Business Areas	Regions	Areas	Franchise Groups	Dealers
+VW-FS	All	profile1	1	Sales				
+VW-FS	All	profile1	1	Aftersales				
+VW-FS	All	profile1	1	Sales,Aftersales				
+VW-FS	All	profile1	2	Sales	region1			
+VW-FS	All	profile1	2	Aftersales	region1			
+VW-FS	All	profile1	2	Sales,Aftersales	region1			
+VW-FS	All	profile1	2	Sales	region2			
+VW-FS	All	profile1	2	Aftersales	region2			
+VW-FS	All	profile1	2	Sales,Aftersales	region2			
+VW-FS	All	profile1	3	Sales		area1		
+VW-FS	All	profile1	3	Aftersales		area1		
+VW-FS	All	profile1	3	Sales,Aftersales		area1		
+VW-FS	All	profile1	3	Sales		area2		
+VW-FS	All	profile1	3	Aftersales		area2		
+VW-FS	All	profile1	3	Sales,Aftersales		area2		
+VW-FS	All	profile2	1	Sales				
+VW-FS	All	profile2	1	Aftersales				
+VW-FS	All	profile2	1	Sales,Aftersales				
+VW-FS	All	profile2	2	Sales	region1			
+VW-FS	All	profile2	2	Aftersales	region1			
+VW-FS	All	profile2	2	Sales,Aftersales	region1			
+VW-FS	All	profile2	2	Sales	region2			
+VW-FS	All	profile2	2	Aftersales	region2			
+VW-FS	All	profile2	2	Sales,Aftersales	region2			
+VW-FS	All	profile2	3	Sales		area1		
+VW-FS	All	profile2	3	Aftersales		area1		
+VW-FS	All	profile2	3	Sales,Aftersales		area1		
+VW-FS	All	profile2	3	Sales		area2		
+VW-FS	All	profile2	3	Aftersales		area2		
+VW-FS	All	profile2	3	Sales,Aftersales		area2		
+VWG-UK	AUDI	profile1	1	Sales				
+VWG-UK	AUDI	profile1	1	Aftersales				
+VWG-UK	AUDI	profile1	1	Sales,Aftersales				
+VWG-UK	AUDI	profile1	2	Sales	region1			
+VWG-UK	AUDI	profile1	2	Aftersales	region1			
+VWG-UK	AUDI	profile1	2	Sales,Aftersales	region1			
+VWG-UK	AUDI	profile1	2	Sales	region2			
+VWG-UK	AUDI	profile1	2	Aftersales	region2			
+VWG-UK	AUDI	profile1	2	Sales,Aftersales	region2			
+VWG-UK	AUDI	profile1	3	Sales		area1		
+VWG-UK	AUDI	profile1	3	Aftersales		area1		
+VWG-UK	AUDI	profile1	3	Sales,Aftersales		area1		
+VWG-UK	AUDI	profile1	3	Sales		area2		
+VWG-UK	AUDI	profile1	3	Aftersales		area2		
+VWG-UK	AUDI	profile1	3	Sales,Aftersales		area2		
+VWG-UK	AUDI	profile2	1	Sales				
+VWG-UK	AUDI	profile2	1	Aftersales				
+VWG-UK	AUDI	profile2	1	Sales,Aftersales				
+VWG-UK	AUDI	profile2	2	Sales	region1			
+VWG-UK	AUDI	profile2	2	Aftersales	region1			
+VWG-UK	AUDI	profile2	2	Sales,Aftersales	region1			
+VWG-UK	AUDI	profile2	2	Sales	region2			
+VWG-UK	AUDI	profile2	2	Aftersales	region2			
+VWG-UK	AUDI	profile2	2	Sales,Aftersales	region2			
+VWG-UK	AUDI	profile2	3	Sales		area1		
+VWG-UK	AUDI	profile2	3	Aftersales		area1		
+VWG-UK	AUDI	profile2	3	Sales,Aftersales		area1		
+VWG-UK	AUDI	profile2	3	Sales		area2		
+VWG-UK	AUDI	profile2	3	Aftersales		area2		
+VWG-UK	AUDI	profile2	3	Sales,Aftersales		area2		
+VWG-UK	SKODA	profile1	1	Sales				
+VWG-UK	SKODA	profile1	1	Aftersales				
+VWG-UK	SKODA	profile1	1	Sales,Aftersales				
+VWG-UK	SKODA	profile1	2	Sales	region1			
+VWG-UK	SKODA	profile1	2	Aftersales	region1			
+VWG-UK	SKODA	profile1	2	Sales,Aftersales	region1			
+VWG-UK	SKODA	profile1	2	Sales	region2			
+VWG-UK	SKODA	profile1	2	Aftersales	region2			
+VWG-UK	SKODA	profile1	2	Sales,Aftersales	region2			
+VWG-UK	SKODA	profile1	3	Sales		area1		
+VWG-UK	SKODA	profile1	3	Aftersales		area1		
+VWG-UK	SKODA	profile1	3	Sales,Aftersales		area1		
+VWG-UK	SKODA	profile1	3	Sales		area2		
+VWG-UK	SKODA	profile1	3	Aftersales		area2		
+VWG-UK	SKODA	profile1	3	Sales,Aftersales		area2		
+VWG-UK	SKODA	profile2	1	Sales				
+VWG-UK	SKODA	profile2	1	Aftersales				
+VWG-UK	SKODA	profile2	1	Sales,Aftersales				
+VWG-UK	SKODA	profile2	2	Sales	region1			
+VWG-UK	SKODA	profile2	2	Aftersales	region1			
+VWG-UK	SKODA	profile2	2	Sales,Aftersales	region1			
+VWG-UK	SKODA	profile2	2	Sales	region2			
+VWG-UK	SKODA	profile2	2	Aftersales	region2			
+VWG-UK	SKODA	profile2	2	Sales,Aftersales	region2			
+VWG-UK	SKODA	profile2	3	Sales		area1		
+VWG-UK	SKODA	profile2	3	Aftersales		area1		
+VWG-UK	SKODA	profile2	3	Sales,Aftersales		area1		
+VWG-UK	SKODA	profile2	3	Sales		area2		
+VWG-UK	SKODA	profile2	3	Aftersales		area2		
+VWG-UK	SKODA	profile2	3	Sales,Aftersales		area2		
+VWG-UK	SEAT	profile1	1	Sales				
+VWG-UK	SEAT	profile1	1	Aftersales				
+VWG-UK	SEAT	profile1	1	Sales,Aftersales				
+VWG-UK	SEAT	profile1	2	Sales	region1			
+VWG-UK	SEAT	profile1	2	Aftersales	region1			
+VWG-UK	SEAT	profile1	2	Sales,Aftersales	region1			
+VWG-UK	SEAT	profile1	2	Sales	region2			
+VWG-UK	SEAT	profile1	2	Aftersales	region2			
+VWG-UK	SEAT	profile1	2	Sales,Aftersales	region2			
+VWG-UK	SEAT	profile1	3	Sales		area1		
+VWG-UK	SEAT	profile1	3	Aftersales		area1		
+VWG-UK	SEAT	profile1	3	Sales,Aftersales		area1		
+VWG-UK	SEAT	profile1	3	Sales		area2		
+VWG-UK	SEAT	profile1	3	Aftersales		area2		
+VWG-UK	SEAT	profile1	3	Sales,Aftersales		area2		
+VWG-UK	SEAT	profile2	1	Sales				
+VWG-UK	SEAT	profile2	1	Aftersales				
+VWG-UK	SEAT	profile2	1	Sales,Aftersales				
+VWG-UK	SEAT	profile2	2	Sales	region1			
+VWG-UK	SEAT	profile2	2	Aftersales	region1			
+VWG-UK	SEAT	profile2	2	Sales,Aftersales	region1			
+VWG-UK	SEAT	profile2	2	Sales	region2			
+VWG-UK	SEAT	profile2	2	Aftersales	region2			
+VWG-UK	SEAT	profile2	2	Sales,Aftersales	region2			
+VWG-UK	SEAT	profile2	3	Sales		area1		
+VWG-UK	SEAT	profile2	3	Aftersales		area1		
+VWG-UK	SEAT	profile2	3	Sales,Aftersales		area1		
+VWG-UK	SEAT	profile2	3	Sales		area2		
+VWG-UK	SEAT	profile2	3	Aftersales		area2		
+VWG-UK	SEAT	profile2	3	Sales,Aftersales		area2		
+VWG-UK	VWPC	profile1	1	Sales				
+VWG-UK	VWPC	profile1	1	Aftersales				
+VWG-UK	VWPC	profile1	1	Sales,Aftersales				
+VWG-UK	VWPC	profile1	2	Sales	region1			
+VWG-UK	VWPC	profile1	2	Aftersales	region1			
+VWG-UK	VWPC	profile1	2	Sales,Aftersales	region1			
+VWG-UK	VWPC	profile1	2	Sales	region2			
+VWG-UK	VWPC	profile1	2	Aftersales	region2			
+VWG-UK	VWPC	profile1	2	Sales,Aftersales	region2			
+VWG-UK	VWPC	profile1	3	Sales		area1		
+VWG-UK	VWPC	profile1	3	Aftersales		area1		
+VWG-UK	VWPC	profile1	3	Sales,Aftersales		area1		
+VWG-UK	VWPC	profile1	3	Sales		area2		
+VWG-UK	VWPC	profile1	3	Aftersales		area2		
+VWG-UK	VWPC	profile1	3	Sales,Aftersales		area2		
+VWG-UK	VWPC	profile2	1	Sales				
+VWG-UK	VWPC	profile2	1	Aftersales				
+VWG-UK	VWPC	profile2	1	Sales,Aftersales				
+VWG-UK	VWPC	profile2	2	Sales	region1			
+VWG-UK	VWPC	profile2	2	Aftersales	region1			
+VWG-UK	VWPC	profile2	2	Sales,Aftersales	region1			
+VWG-UK	VWPC	profile2	2	Sales	region2			
+VWG-UK	VWPC	profile2	2	Aftersales	region2			
+VWG-UK	VWPC	profile2	2	Sales,Aftersales	region2			
+VWG-UK	VWPC	profile2	3	Sales		area1		
+VWG-UK	VWPC	profile2	3	Aftersales		area1		
+VWG-UK	VWPC	profile2	3	Sales,Aftersales		area1		
+VWG-UK	VWPC	profile2	3	Sales		area2		
+VWG-UK	VWPC	profile2	3	Aftersales		area2		
+VWG-UK	VWPC	profile2	3	Sales,Aftersales		area2		
+VWG-UK	VWCV	profile1	1	Sales				
+VWG-UK	VWCV	profile1	1	Aftersales				
+VWG-UK	VWCV	profile1	1	Sales,Aftersales				
+VWG-UK	VWCV	profile1	2	Sales	region1			
+VWG-UK	VWCV	profile1	2	Aftersales	region1			
+VWG-UK	VWCV	profile1	2	Sales,Aftersales	region1			
+VWG-UK	VWCV	profile1	2	Sales	region2			
+VWG-UK	VWCV	profile1	2	Aftersales	region2			
+VWG-UK	VWCV	profile1	2	Sales,Aftersales	region2			
+VWG-UK	VWCV	profile1	3	Sales		area1		
+VWG-UK	VWCV	profile1	3	Aftersales		area1		
+VWG-UK	VWCV	profile1	3	Sales,Aftersales		area1		
+VWG-UK	VWCV	profile1	3	Sales		area2		
+VWG-UK	VWCV	profile1	3	Aftersales		area2		
+VWG-UK	VWCV	profile1	3	Sales,Aftersales		area2		
+VWG-UK	VWCV	profile2	1	Sales				
+VWG-UK	VWCV	profile2	1	Aftersales				
+VWG-UK	VWCV	profile2	1	Sales,Aftersales				
+VWG-UK	VWCV	profile2	2	Sales	region1			
+VWG-UK	VWCV	profile2	2	Aftersales	region1			
+VWG-UK	VWCV	profile2	2	Sales,Aftersales	region1			
+VWG-UK	VWCV	profile2	2	Sales	region2			
+VWG-UK	VWCV	profile2	2	Aftersales	region2			
+VWG-UK	VWCV	profile2	2	Sales,Aftersales	region2			
+VWG-UK	VWCV	profile2	3	Sales		area1		
+VWG-UK	VWCV	profile2	3	Aftersales		area1		
+VWG-UK	VWCV	profile2	3	Sales,Aftersales		area1		
+VWG-UK	VWCV	profile2	3	Sales		area2		
+VWG-UK	VWCV	profile2	3	Aftersales		area2		
+VWG-UK	VWCV	profile2	3	Sales,Aftersales		area2		
+Dealerships	AUDI	profile1	4	Sales			group1	00001
+Dealerships	AUDI	profile1	4	Aftersales			group1	00001
+Dealerships	AUDI	profile1	4	Sales,Aftersales			group1	00001
+Dealerships	AUDI	profile1	4	Sales			group2	00001,00002
+Dealerships	AUDI	profile1	4	Aftersales			group2	00001,00002
+Dealerships	AUDI	profile1	4	Sales,Aftersales			group2	00001,00002
+Dealerships	AUDI	profile2	4	Sales			group1	00001
+Dealerships	AUDI	profile2	4	Aftersales			group1	00001
+Dealerships	AUDI	profile2	4	Sales,Aftersales			group1	00001
+Dealerships	AUDI	profile2	4	Sales			group2	00001,00002
+Dealerships	AUDI	profile2	4	Aftersales			group2	00001,00002
+Dealerships	AUDI	profile2	4	Sales,Aftersales			group2	00001,00002
+Dealerships	SKODA	profile1	4	Sales			group1	00001
+Dealerships	SKODA	profile1	4	Aftersales			group1	00001
+Dealerships	SKODA	profile1	4	Sales,Aftersales			group1	00001
+Dealerships	SKODA	profile1	4	Sales			group2	00001,00002
+Dealerships	SKODA	profile1	4	Aftersales			group2	00001,00002
+Dealerships	SKODA	profile1	4	Sales,Aftersales			group2	00001,00002
+Dealerships	SKODA	profile2	4	Sales			group1	00001
+Dealerships	SKODA	profile2	4	Aftersales			group1	00001
+Dealerships	SKODA	profile2	4	Sales,Aftersales			group1	00001
+Dealerships	SKODA	profile2	4	Sales			group2	00001,00002
+Dealerships	SKODA	profile2	4	Aftersales			group2	00001,00002
+Dealerships	SKODA	profile2	4	Sales,Aftersales			group2	00001,00002
+Dealerships	SEAT	profile1	4	Sales			group1	00001
+Dealerships	SEAT	profile1	4	Aftersales			group1	00001
+Dealerships	SEAT	profile1	4	Sales,Aftersales			group1	00001
+Dealerships	SEAT	profile1	4	Sales			group2	00001,00002
+Dealerships	SEAT	profile1	4	Aftersales			group2	00001,00002
+Dealerships	SEAT	profile1	4	Sales,Aftersales			group2	00001,00002
+Dealerships	SEAT	profile2	4	Sales			group1	00001
+Dealerships	SEAT	profile2	4	Aftersales			group1	00001
+Dealerships	SEAT	profile2	4	Sales,Aftersales			group1	00001
+Dealerships	SEAT	profile2	4	Sales			group2	00001,00002
+Dealerships	SEAT	profile2	4	Aftersales			group2	00001,00002
+Dealerships	SEAT	profile2	4	Sales,Aftersales			group2	00001,00002
+Dealerships	VWPC	profile1	4	Sales			group1	00001
+Dealerships	VWPC	profile1	4	Aftersales			group1	00001
+Dealerships	VWPC	profile1	4	Sales,Aftersales			group1	00001
+Dealerships	VWPC	profile1	4	Sales			group2	00001,00002
+Dealerships	VWPC	profile1	4	Aftersales			group2	00001,00002
+Dealerships	VWPC	profile1	4	Sales,Aftersales			group2	00001,00002
+Dealerships	VWPC	profile2	4	Sales			group1	00001
+Dealerships	VWPC	profile2	4	Aftersales			group1	00001
+Dealerships	VWPC	profile2	4	Sales,Aftersales			group1	00001
+Dealerships	VWPC	profile2	4	Sales			group2	00001,00002
+Dealerships	VWPC	profile2	4	Aftersales			group2	00001,00002
+Dealerships	VWPC	profile2	4	Sales,Aftersales			group2	00001,00002
+Dealerships	VWCV	profile1	4	Sales			group1	00001
+Dealerships	VWCV	profile1	4	Aftersales			group1	00001
+Dealerships	VWCV	profile1	4	Sales,Aftersales			group1	00001
+Dealerships	VWCV	profile1	4	Sales			group2	00001,00002
+Dealerships	VWCV	profile1	4	Aftersales			group2	00001,00002
+Dealerships	VWCV	profile1	4	Sales,Aftersales			group2	00001,00002
+Dealerships	VWCV	profile2	4	Sales			group1	00001
+Dealerships	VWCV	profile2	4	Aftersales			group1	00001
+Dealerships	VWCV	profile2	4	Sales,Aftersales			group1	00001
+Dealerships	VWCV	profile2	4	Sales			group2	00001,00002
+Dealerships	VWCV	profile2	4	Aftersales			group2	00001,00002
+Dealerships	VWCV	profile2	4	Sales,Aftersales			group2	00001,00002
+Dealerships	AUDI	profile1	5	Sales				00001
+Dealerships	AUDI	profile1	5	Aftersales				00001
+Dealerships	AUDI	profile1	5	Sales,Aftersales				00001
+Dealerships	AUDI	profile1	5	Sales				00002
+Dealerships	AUDI	profile1	5	Aftersales				00002
+Dealerships	AUDI	profile1	5	Sales,Aftersales				00002
+Dealerships	AUDI	profile2	5	Sales				00001
+Dealerships	AUDI	profile2	5	Aftersales				00001
+Dealerships	AUDI	profile2	5	Sales,Aftersales				00001
+Dealerships	AUDI	profile2	5	Sales				00002
+Dealerships	AUDI	profile2	5	Aftersales				00002
+Dealerships	AUDI	profile2	5	Sales,Aftersales				00002
+Dealerships	SKODA	profile1	5	Sales				00001
+Dealerships	SKODA	profile1	5	Aftersales				00001
+Dealerships	SKODA	profile1	5	Sales,Aftersales				00001
+Dealerships	SKODA	profile1	5	Sales				00002
+Dealerships	SKODA	profile1	5	Aftersales				00002
+Dealerships	SKODA	profile1	5	Sales,Aftersales				00002
+Dealerships	SKODA	profile2	5	Sales				00001
+Dealerships	SKODA	profile2	5	Aftersales				00001
+Dealerships	SKODA	profile2	5	Sales,Aftersales				00001
+Dealerships	SKODA	profile2	5	Sales				00002
+Dealerships	SKODA	profile2	5	Aftersales				00002
+Dealerships	SKODA	profile2	5	Sales,Aftersales				00002
+Dealerships	SEAT	profile1	5	Sales				00001
+Dealerships	SEAT	profile1	5	Aftersales				00001
+Dealerships	SEAT	profile1	5	Sales,Aftersales				00001
+Dealerships	SEAT	profile1	5	Sales				00002
+Dealerships	SEAT	profile1	5	Aftersales				00002
+Dealerships	SEAT	profile1	5	Sales,Aftersales				00002
+Dealerships	SEAT	profile2	5	Sales				00001
+Dealerships	SEAT	profile2	5	Aftersales				00001
+Dealerships	SEAT	profile2	5	Sales,Aftersales				00001
+Dealerships	SEAT	profile2	5	Sales				00002
+Dealerships	SEAT	profile2	5	Aftersales				00002
+Dealerships	SEAT	profile2	5	Sales,Aftersales				00002
+Dealerships	VWPC	profile1	5	Sales				00001
+Dealerships	VWPC	profile1	5	Aftersales				00001
+Dealerships	VWPC	profile1	5	Sales,Aftersales				00001
+Dealerships	VWPC	profile1	5	Sales				00002
+Dealerships	VWPC	profile1	5	Aftersales				00002
+Dealerships	VWPC	profile1	5	Sales,Aftersales				00002
+Dealerships	VWPC	profile2	5	Sales				00001
+Dealerships	VWPC	profile2	5	Aftersales				00001
+Dealerships	VWPC	profile2	5	Sales,Aftersales				00001
+Dealerships	VWPC	profile2	5	Sales				00002
+Dealerships	VWPC	profile2	5	Aftersales				00002
+Dealerships	VWPC	profile2	5	Sales,Aftersales				00002
+Dealerships	VWCV	profile1	5	Sales				00001
+Dealerships	VWCV	profile1	5	Aftersales				00001
+Dealerships	VWCV	profile1	5	Sales,Aftersales				00001
+Dealerships	VWCV	profile1	5	Sales				00002
+Dealerships	VWCV	profile1	5	Aftersales				00002
+Dealerships	VWCV	profile1	5	Sales,Aftersales				00002
+Dealerships	VWCV	profile2	5	Sales				00001
+Dealerships	VWCV	profile2	5	Aftersales				00001
+Dealerships	VWCV	profile2	5	Sales,Aftersales				00001
+Dealerships	VWCV	profile2	5	Sales				00002
+Dealerships	VWCV	profile2	5	Aftersales				00002
+Dealerships	VWCV	profile2	5	Sales,Aftersales				00002
+Mondial	AUDI	profile1	3	Sales		area1		
+Mondial	AUDI	profile1	3	Aftersales		area1		
+Mondial	AUDI	profile1	3	Sales,Aftersales		area1		
+Mondial	AUDI	profile1	3	Sales		area2		
+Mondial	AUDI	profile1	3	Aftersales		area2		
+Mondial	AUDI	profile1	3	Sales,Aftersales		area2		
+Mondial	AUDI	profile1	3	Sales		area1,area2		
+Mondial	AUDI	profile1	3	Aftersales		area1,area2		
+Mondial	AUDI	profile1	3	Sales,Aftersales		area1,area2		
+Mondial	AUDI	profile1	3	Sales			group1	00001
+Mondial	AUDI	profile1	3	Aftersales			group1	00001
+Mondial	AUDI	profile1	3	Sales,Aftersales			group1	00001
+Mondial	AUDI	profile1	3	Sales			group2	00001,00002
+Mondial	AUDI	profile1	3	Aftersales			group2	00001,00002
+Mondial	AUDI	profile1	3	Sales,Aftersales			group2	00001,00002
+Mondial	AUDI	profile1	3	Sales			group1,group2	00001,00002
+Mondial	AUDI	profile1	3	Aftersales			group1,group2	00001,00002
+Mondial	AUDI	profile1	3	Sales,Aftersales			group1,group2	00001,00002
+Mondial	AUDI	profile1	3	Sales		area1	group1	00001
+Mondial	AUDI	profile1	3	Aftersales		area1	group1	00001
+Mondial	AUDI	profile1	3	Sales,Aftersales		area1	group1	00001
+Mondial	AUDI	profile1	3	Sales				00001
+Mondial	AUDI	profile1	3	Aftersales				00001
+Mondial	AUDI	profile1	3	Sales,Aftersales				00001
+Mondial	AUDI	profile2	3	Sales		area1		
+Mondial	AUDI	profile2	3	Aftersales		area1		
+Mondial	AUDI	profile2	3	Sales,Aftersales		area1		
+Mondial	AUDI	profile2	3	Sales		area2		
+Mondial	AUDI	profile2	3	Aftersales		area2		
+Mondial	AUDI	profile2	3	Sales,Aftersales		area2		
+Mondial	AUDI	profile2	3	Sales		area1,area2		
+Mondial	AUDI	profile2	3	Aftersales		area1,area2		
+Mondial	AUDI	profile2	3	Sales,Aftersales		area1,area2		
+Mondial	AUDI	profile2	3	Sales			group1	00001
+Mondial	AUDI	profile2	3	Aftersales			group1	00001
+Mondial	AUDI	profile2	3	Sales,Aftersales			group1	00001
+Mondial	AUDI	profile2	3	Sales			group2	00001,00002
+Mondial	AUDI	profile2	3	Aftersales			group2	00001,00002
+Mondial	AUDI	profile2	3	Sales,Aftersales			group2	00001,00002
+Mondial	AUDI	profile2	3	Sales			group1,group2	00001,00002
+Mondial	AUDI	profile2	3	Aftersales			group1,group2	00001,00002
+Mondial	AUDI	profile2	3	Sales,Aftersales			group1,group2	00001,00002
+Mondial	AUDI	profile2	3	Sales		area1	group1	00001
+Mondial	AUDI	profile2	3	Aftersales		area1	group1	00001
+Mondial	AUDI	profile2	3	Sales,Aftersales		area1	group1	00001
+Mondial	AUDI	profile2	3	Sales				00001
+Mondial	AUDI	profile2	3	Aftersales				00001
+Mondial	AUDI	profile2	3	Sales,Aftersales				00001

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<decorators defaultdir="/WEB-INF/jsp/template">
+
+	<decorator name="main" page="mainDecorator.jsp">
+		<pattern>*</pattern>
+	</decorator>
+
+	<!-- make decorators for printing, ajax panels and popups with minimal decoration -->
+
+</decorators>

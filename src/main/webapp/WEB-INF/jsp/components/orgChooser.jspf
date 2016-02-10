@@ -1,0 +1,26 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><%
+%><%@page import="com.vw.visitreporting.web.form.OrganisationBrand"%><%
+%><%@page import="com.vw.visitreporting.entity.referencedata.enums.Brand"%><%
+
+	pageContext.setAttribute("firstBrand",    Brand.values()[0]);
+	pageContext.setAttribute("lastBrand",     Brand.values()[Brand.values().length-1]);
+	pageContext.setAttribute("selectedValue", request.getAttribute((String)pageContext.getAttribute("orgChooser_elementId")));
+
+%><select id="${orgChooser_elementId}" name="${orgChooser_elementId}" onchange="${orgChooser_onchange}">
+
+	<option value="">&nbsp;</option>
+	
+	<c:forEach items="${organisationBrands}" var="orgBrand">
+	
+		<c:if test="${orgBrand.vwgOrDealer and orgBrand.brand==firstBrand}">
+			<optgroup label="${orgBrand.organisationName}">
+		</c:if>
+		
+		<option value="${orgBrand.id}" ${(selectedValue!=null and orgBrand.id==selectedValue.id)?'selected':''} >${orgBrand}</option>
+		
+		<c:if test="${orgBrand.vwgOrDealer and orgBrand.brand==lastBrand}">
+			</optgroup>
+		</c:if>
+	</c:forEach>
+
+</select>

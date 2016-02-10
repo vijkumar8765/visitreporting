@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="logFile" class="org.apache.log4j.FileAppender"> 
+
+		<!-- Active log file -->
+		<param name="file" value="--FILENAME--" />
+		<param name="append" value="false" />
+		<param name="encoding" value="UTF-8" />
+
+		<layout class="org.apache.log4j.PatternLayout"> 
+			<param name="ConversionPattern" value="%d [%t] %-5p %c{2}:%L [%X{username}] - %m%n"/> 
+		</layout> 
+		
+	</appender> 
+
+	<root> 
+		<priority value ="--LEVEL--" /> 
+		<appender-ref ref="logFile" /> 
+	</root>
+  
+</log4j:configuration>

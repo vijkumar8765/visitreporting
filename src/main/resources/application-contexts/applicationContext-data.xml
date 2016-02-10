@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+				http://www.springframework.org/schema/beans 
+				http://www.springframework.org/schema/beans/spring-beans-3.0.xsd        
+				http://www.springframework.org/schema/context
+				http://www.springframework.org/schema/context/spring-context-3.0.xsd
+				http://www.springframework.org/schema/tx
+				http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+				http://www.springframework.org/schema/aop
+				http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+
+	<!-- This bean provides utilities for tests and also runs SQL setup scripts for tests or development -->        
+	<bean id="dbUtils" class="com.vw.visitreporting.common.DbUtils">
+		<property name="setupScripts" value="${config.db.setup.data}"/>
+	</bean>        
+        
+        
+	<!-- Create a (non-pooled) data source to an HSQLDB server instance -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${config.db.driver}"/>
+		<property name="url" value="${config.db.url}"/>
+		<property name="username" value="${config.db.user}"/>
+		<property name="password" value="${config.db.pass}"/>
+	</bean>
+
+
+	<!-- Create a Hibernate session factory and enable 2nd level caching -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"> 
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan"> 
+			<list>
+				<value>com.vw.visitreporting.entity</value> 
+			</list> 
+		</property>
+		<property name="hibernateProperties"> 
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop> 
+				<prop key="hibernate.hbm2ddl.auto">${config.punit.mode}</prop>
+				
+				<!-- Caching -->
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.cache.region.factory_class">net.sf.ehcache.hibernate.EhCacheRegionFactory</prop>
+
+ 			</props>
+		</property> 
+	</bean>
+	
+    
+	<!-- Create a cache manager for 2nd level caching -->
+	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" />
+
+
+	<!-- Create a transaction manager for Hibernate -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+	<tx:annotation-driven />
+	
+	
+	<!-- Define AOP advice to apply transaction settings by default to methods in Service layer -->
+	<tx:advice id="txDaoAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut id="txDaoPointCut" expression="execution(* com.vw.visitreporting.dao..*.*(..))" />
+		<aop:advisor advice-ref="txDaoAdvice" pointcut-ref="txDaoPointCut" />
+	</aop:config>
+
+</beans>

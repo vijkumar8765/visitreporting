@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+
+	<USER 
+		USER_ID="User001"
+		TYPE_OF_ORGANISATION="0"
+		ORGANISATION_ID="1"
+		FIRST_NAME="Joe"
+		SUR_NAME="Bloggs"
+		EMAIL_ADDRESS="Joe.Bloggs@vwg.co.uk"
+		LANDLINE="123"
+		MOBILE="456"
+		POSITION_ID="1"
+		PASSWORD="***"
+ 		IS_DISABLED="0"
+ 		CREATED_BY="DBA"
+		CREATED_DATE="2011-01-01"
+		MODIFIED_BY="DBA"
+		MODIFIED_DATE="2011-01-01"
+	/>
+
+    <USER_USER_PROFILE USER_ID="User001" USER_PROFILE_ID="1" />
+
+    <USER_USER_PROFILE USER_ID="User001" USER_PROFILE_ID="2" />
+
+		
+</dataset>
+
+

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+				http://www.springframework.org/schema/beans 
+				http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+				http://www.springframework.org/schema/mvc
+				http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+				http://www.springframework.org/schema/context
+				http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+	<!-- JSR-303 support will be detected on class path and enabled automatically -->
+	<mvc:annotation-driven conversion-service="conversionService" />
+
+	<!-- Required for to allow static and dynamic content to be served by the DispatcherServlet -->
+	<mvc:default-servlet-handler/>
+
+	<!-- Serve up all static content with a ResourceHttpRequestHandler (with a 1 year expiry) -->
+	<mvc:resources mapping="/static/**" location="/static/" cache-period="31556926" />
+
+	<bean id="handlerMapping"
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="domainObjectAuthorisationInterceptor" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="domainObjectAuthorisationInterceptor"
+		class="com.vw.visitreporting.web.interceptor.DomainObjectAuthorisationInterceptor" />
+	
+	<!-- ContentNegotiatingViewResolver for negotiating to view names based on extension -->
+	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="order" value="1" />
+		<property name="ignoreAcceptHeader"><value>true</value></property>
+		<property name="favorPathExtension"><value>true</value></property>
+		<property name="mediaTypes">
+			<map>
+				<entry key="atom" value="application/atom+xml"/>
+				<entry key="html" value="text/html"/>
+				<entry key="json" value="application/json"/>
+			</map>
+		</property>
+		<property name="defaultViews">
+			<list>
+				<bean name="list" class="com.vw.visitreporting.reports.OrganisationLevelsPdfView" />
+				<bean name="list" class="com.vw.visitreporting.reports.OrganisationLevelsExcelView" />				
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Remap view names to internal jsp resources -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="order" value="2" />
+		<property name="viewClass"><value>org.springframework.web.servlet.view.JstlView</value></property>
+		<property name="prefix"><value>/WEB-INF/jsp/pages/</value></property>
+		<property name="suffix"><value>.jsp</value></property>
+	</bean>
+	
+	<!-- Provide custom implementation of UserDetailsService that returns custom UserDetails objects -->
+    <bean id="authenticationUserDetailsServiceImpl" class="com.vw.visitreporting.security.authentication.AuthenticationUserDetailsServiceImpl"/>
+	
+	<!-- Define fault barrier -->
+	<bean id="exceptionResolver" class="com.vw.visitreporting.web.CustomMappingExceptionResolver">
+		<property name="defaultErrorView" value="error"/>
+		<property name="exceptionMappings">
+			<props>
+				<prop key="org.springframework.security.access.AccessDeniedException">access-denied</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource"
+		p:basenames="errors"/>
+	
+</beans>

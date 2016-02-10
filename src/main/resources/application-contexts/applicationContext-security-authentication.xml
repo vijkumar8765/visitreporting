@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:sec="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="
+				http://www.springframework.org/schema/beans 
+				http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+				http://www.springframework.org/schema/context
+				http://www.springframework.org/schema/context/spring-context-3.0.xsd
+				http://www.springframework.org/schema/security
+				http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+
+ 	<!-- Configure the filter chain linked to by the DelegatingFilterProxy in web.xml -->
+    <bean id="springSecurityFilterChain" class="org.springframework.security.web.FilterChainProxy">
+        <sec:filter-chain-map path-type="ant">
+            <sec:filter-chain pattern="/**" filters="
+            	securityContextPersistenceFilter,
+            	exceptionTranslationFilter,
+            	preAuthFilter,
+            	identityLoggingContextFilter"/>
+        </sec:filter-chain-map>
+    </bean>
+
+
+	<!-- Specimfy an authentication provider that assumes pre-authentication -->
+    <sec:authentication-manager alias="authenticationManager">
+        <sec:authentication-provider ref="preAuthenticatedAuthenticationProvider" />
+    </sec:authentication-manager>
+    <bean id="preAuthenticatedAuthenticationProvider" class="org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationProvider">
+        <property name="preAuthenticatedUserDetailsService" ref="authenticationUserDetailsServiceImpl" />
+    </bean>
+
+	<!-- Provide custom implementation of UserDetailsService that returns custom UserDetails objects -->
+    <bean id="authenticationUserDetailsServiceImpl" class="com.vw.visitreporting.security.authentication.AuthenticationUserDetailsServiceImpl"/>
+
+
+
+		<!-- Filter that persists the security context over the life of a session -->
+	    <bean id="securityContextPersistenceFilter" class="org.springframework.security.web.context.SecurityContextPersistenceFilter"/>
+
+
+	<!-- Custom implementation of PreAuthenticatedProcessingFilter that obtains the user name from an HTTP Request that has gone through a JCIFS NTLN filter -->
+	<!-- For pre-authentication solutions where user_id is in request header, use RequestHeaderAuthenticationFilter  -->
+	<!-- See: http://docs.huihoo.com/spring/spring-security/3.0.x/preauth.html#d4e2269 -->
+	<bean id="preAuthFilter" class="com.vw.visitreporting.security.authentication.PreAuthenticatedProcessingFilterImpl">
+		<!-- sec:custom-filter position="PRE_AUTH_FILTER" /-->
+        <property name="authenticationManager" ref="authenticationManager"/>
+		<property name="authenticationDetailsSource">
+			<bean class="org.springframework.security.authentication.AuthenticationDetailsSourceImpl" />
+        </property>
+        <property name="continueFilterChainOnUnsuccessfulAuthentication" value="false" />
+	</bean>
+
+
+	<!-- Filter that catches any exceptions from the security filter chain and redirects the user to a 403 HTTP response -->
+    <bean id="exceptionTranslationFilter" class="org.springframework.security.web.access.ExceptionTranslationFilter">
+        <property name="authenticationEntryPoint">
+		    <!-- bean class="org.springframework.security.web.authentication.Http403ForbiddenEntryPoint"/-->
+		    <bean class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+		    	<property name="loginFormUrl" value="/account-access-denied.jsp" />
+		    	<property name="useForward" value="true" />
+		    </bean>
+        </property>
+		<property name="accessDeniedHandler">
+			<bean class="org.springframework.security.web.access.AccessDeniedHandlerImpl">
+				<property name="errorPage" value="/account-access-denied.jsp" />
+			</bean>
+		</property>
+    </bean>
+    
+    
+    <!-- Filter that sets the user name property in the logging framework so that all log messages for the user's session contain their user name -->
+    <bean id="identityLoggingContextFilter" class="com.vw.visitreporting.security.authentication.IdentityLoggingContextFilter" />
+
+</beans>
